@@ -47,7 +47,7 @@ jobs:
         with:
           tags: |
             type=raw,enable={{is_default_branch}},value=latest,priority=1000
-            type=raw,enable=true,value={{date 'YYYYMMDD-hhmmss', tz='UTC'}},priority=100
+            type=raw,enable=true,value={{date 'YYYYMMDD-HHmmss' tz='UTC'}},priority=100
           images: |
             ${{ secrets.DOCKERHUB_USERNAME }}/docker-viaaas
             ghcr.io/${{ github.repository }}
