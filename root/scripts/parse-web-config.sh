@@ -3,6 +3,16 @@
 WEB_CONFIG_DIR=/app/config/web/js
 WEB_CONFIG_FILE=${WEB_CONFIG_DIR}/config.js
 
+{
+if [ -f ${WEB_CONFIG_FILE} ]; then
+  echo "${WEB_CONFIG_FILE} exists, skipping parse..."
+  exit 0
+fi
+}
+
+set -e
+
+echo "Parsing environment for ${WEB_CONFIG_FILE}"
 mkdir -p ${WEB_CONFIG_DIR}
 touch ${WEB_CONFIG_FILE}
 cat /dev/null >| ${WEB_CONFIG_FILE}
@@ -15,6 +25,22 @@ cat /dev/null >| ${WEB_CONFIG_FILE}
 
 # write to config file
 echo "const azureClientId = \"${parsedClientId}\";" >> ${WEB_CONFIG_FILE}
-echo "const whitelistedOrigin = [ \"${parsedOrigins}\" ];" >> ${WEB_CONFIG_FILE} # TODO: Support multiple origins
+
+echo -n "const whitelistedOrigin = [" >> ${WEB_CONFIG_FILE}
+
+IFS='
+'
+count=0
+for origin in ${parsedOrigins}
+do
+  if [ ${count} -ne 0 ]; then
+    echo -n "," >> ${WEB_CONFIG_FILE}
+  fi
+  echo -n "\"$(echo ${origin} | xargs echo -n)\"" >> ${WEB_CONFIG_FILE}
+  count=$((count+1))
+done
+
+echo "];" >> ${WEB_CONFIG_FILE}
+
 echo "var defaultCorsProxy = \"${parsedProxy}\";" >> ${WEB_CONFIG_FILE}
 echo "var defaultInstanceSuffix = ${parsedSuffix};" >> ${WEB_CONFIG_FILE}

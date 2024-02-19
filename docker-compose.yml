@@ -2,11 +2,8 @@ version: '3'
 services:
   viaaas:
     image: roblkyogre/docker-viaaas:latest
-    environment:
-      AZURE_CLIENT_ID: my-client-id # See https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-app-registration
-      WHITELISTED_ORIGINS: https://viaaas.example.com # Change to your Web UI domain
-      CORS_PROXY: cors.example.com # OPTIONAL
-      INSTANCE_SUFFIX: viaaas.example.com[:25565] # OPTIONAL
+    build: .
+    env_file: ./docker.env
     ports:
       - 25543:25543 # Web UI port
       - 25565:25565 # Minecraft port

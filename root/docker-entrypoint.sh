@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 for SCRIPT_FILE in $(find /scripts -type f -print)
 do
