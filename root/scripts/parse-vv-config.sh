@@ -30,8 +30,8 @@ parsedHologramY="${VV_HOLOGRAM_Y:--0.96}"
 parsedPistonAnimationPatch="${VV_PISTON_ANIMATION_PATCH:-false}"
 parsedChatNbtFix="${VV_CHAT_NBT_FIX:-true}"
 parsedTeamColourFix="${VV_TEAM_COLOUR_FIX:-true}"
-parsedDisable11_3AutoComplete="${VV_DISABLE_1_13_AUTO_COMPLETE:-false}"
-parsed11_3TabCompleteDelay="${VV_1_13_TAB_COMPLETE_DELAY:-0}"
+parsedDisable1_13AutoComplete="${VV_DISABLE_1_13_AUTO_COMPLETE:-false}"
+parsed1_13TabCompleteDelay="${VV_1_13_TAB_COMPLETE_DELAY:-0}"
 parsedFixLowSnowCollision="${VV_FIX_LOW_SNOW_COLLISION:-false}"
 parsedFixInfestedBlockBreaking="${VV_FIX_INFESTED_BLOCK_BREAKING:-true}"
 parsedTruncate1_14Books="${VV_TRUNCATE_1_14_BOOKS:-false}"
@@ -43,9 +43,9 @@ parsedReduceBlockstorageMemory="${VV_REDUCE_BLOCKSTORAGE_MEMORY:-false}"
 parsedFlowerstemWhenBlockAbove="${VV_FLOWERSTEM_WHEN_BLOCK_ABOVE:-false}"
 parsedVineClimbFix="${VV_VINE_CLIMB_FIX:-false}"
 parsedIgnoreLong1_16ChannelNames="${VV_IGNORE_LONG_1_16_CHANNEL_NAMES:-true}"
-parsedForcedUse117ResourcePack="${VV_FORCED_USE_1_17_RESOURCE_PACK:-false}"
+parsedForcedUse1_17ResourcePack="${VV_FORCED_USE_1_17_RESOURCE_PACK:-false}"
 parsedResourcePack1_17Prompt="${VV_RESOURCE_PACK_1_17_PROMPT}"
-parsedCache117Light="${VV_CACHE_1_17_LIGHT:-true}"
+parsedCache1_17Light="${VV_CACHE_1_17_LIGHT:-true}"
 parsedArmorToggleFix="${VV_ARMOR_TOGGLE_FIX:-true}"
 
 parsedMap1_16WorldNamesOverworld="${VV_MAP_1_16_WORLD_NAMES_OVERWORLD:-minecraft:overworld}"
@@ -102,7 +102,7 @@ echo "fix-infested-block-breaking: ${parsedFixInfestedBlockBreaking}" >> ${CONFI
 echo "truncate-1_14-books: ${parsedTruncate1_14Books}" >> ${CONFIG_FILE}
 echo "fix-non-full-blocklight: ${parsedFixNonFullBlocklight}" >> ${CONFIG_FILE}
 echo "fix-1_14-health-nan: ${parsedFix1_14HealthNan}" >> ${CONFIG_FILE}
-echo "use-1_15-instant-respawn: ${parsed-use-1_15-instant-respawn}" >> ${CONFIG_FILE}
+echo "use-1_15-instant-respawn: ${parsedUse1_15InstantRespawn}" >> ${CONFIG_FILE}
 echo "serverside-blockconnections: ${parsedServersideBlockconnections}" >> ${CONFIG_FILE}
 echo "reduce-blockstorage-memory: ${parsedReduceBlockstorageMemory}" >> ${CONFIG_FILE}
 echo "flowerstem-when-block-above: ${parsedFlowerstemWhenBlockAbove}" >> ${CONFIG_FILE}
