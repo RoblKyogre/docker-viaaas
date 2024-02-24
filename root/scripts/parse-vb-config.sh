@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-CONFIG_DIR=/app/config
-CONFIG_FILE=${CONFIG_DIR}/viabackwards.yml
+CONFIG_DIR=/app/config/viabackwards
+CONFIG_FILE=${CONFIG_DIR}/config.yml
 
 {
 if [ -f ${CONFIG_FILE} ]; then
