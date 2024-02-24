@@ -17,6 +17,8 @@ mkdir -p ${CONFIG_DIR}
 touch ${CONFIG_FILE}
 
 # defaults lifted from https://github.com/ViaVersion/VIAaaS/blob/master/src/main/resources/web/js/config.js
+IFS='
+'
 parsedClientId="${WEB_AZURE_CLIENT_ID:-a370fff9-7648-4dbf-b96e-2b4f8d539ac2}"
 parsedOrigins="${WEB_WHITELISTED_ORIGINS:-https://via.re.yt.nom.br}"
 parsedProxy="${WEB_CORS_PROXY:-https://cors.re.yt.nom.br/}"
@@ -26,8 +28,6 @@ parsedProxy="${WEB_CORS_PROXY:-https://cors.re.yt.nom.br/}"
 echo "const azureClientId = \"${parsedClientId}\";" >> ${CONFIG_FILE}
 
 echo -n "const whitelistedOrigin = [" >> ${CONFIG_FILE}
-IFS='
-'
 count=0
 for origin in ${parsedOrigins}
 do
