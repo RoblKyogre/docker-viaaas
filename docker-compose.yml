@@ -1,8 +1,8 @@
 version: '3'
 services:
   viaaas:
-    image: roblkyogre/docker-viaaas:latest
-    # build: .
+    # image: roblkyogre/docker-viaaas:latest
+    build: .
     container_name: viaaas
     env_file: ./docker.env
     ports:

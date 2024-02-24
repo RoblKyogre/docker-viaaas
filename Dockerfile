@@ -13,6 +13,7 @@ RUN apk add git
 RUN git clone -b dev https://github.com/ViaVersion/VIAaaS.git VIAaaS
 
 WORKDIR /builder/VIAaaS
+ENV GRADLE_OPTS="-Xmx512m -Dorg.gradle.daemon=false"
 RUN ./gradlew build
 
 FROM ${BASE_IMAGE} as final
