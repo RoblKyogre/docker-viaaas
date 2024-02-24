@@ -116,7 +116,7 @@ echo "armor-toggle-fix: ${parsedArmorToggleFix}" >> ${CONFIG_FILE}
 echo "map-1_16-world-names:" >> ${CONFIG_FILE}
 echo "  overworld: ${parsedMap1_16WorldNamesOverworld}" >> ${CONFIG_FILE}
 echo "  nether: ${parsedMap1_16WorldNamesNether}" >> ${CONFIG_FILE}
-echo "  end: minecraft:the_end: ${parsedMap1_16WorldNamesEnd}" >> ${CONFIG_FILE}
+echo "  end: ${parsedMap1_16WorldNamesEnd}" >> ${CONFIG_FILE}
 
 echo "prevent-collision: ${parsedPreventCollision}" >> ${CONFIG_FILE}
 echo "auto-team: ${parsedAutoTeam}" >> ${CONFIG_FILE}
