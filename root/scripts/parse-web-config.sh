@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env ash
 
 CONFIG_DIR=/app/config/web/js
 CONFIG_FILE=${CONFIG_DIR}/config.js

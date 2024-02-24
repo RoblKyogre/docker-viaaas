@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env ash
 
 CONFIG_DIR=/app/config
 CONFIG_FILE=${CONFIG_DIR}/viarewind.yml

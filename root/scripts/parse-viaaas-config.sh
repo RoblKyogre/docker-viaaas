@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env ash
 
 CONFIG_DIR=/app/config
 CONFIG_FILE=${CONFIG_DIR}/viaaas.yml
@@ -39,7 +39,7 @@ parsedFaviconUrl="${VIAAAS_FAVICON_URL:-https://raw.githubusercontent.com/ViaVer
 parsedForceOnlineMode="${VIAAAS_FORCE_ONLINE_MODE:-false}"
 parsedMaxPlayers="${VIAAAS_MAX_PLAYERS:-20}"
 parsedProtocolDetectorCache="${VIAAAS_PROTOCOL_DETECTOR_CACHE:-20}"
-parsedJwtSecret="${VIAAAS_JWT_SECRET:-$(head -c 64 /dev/urandom | base64 --wrap=0)}"
+parsedJwtSecret="${VIAAAS_JWT_SECRET:-$(head -c 64 /dev/urandom | base64 -w 0)}"
 parsedBackendAddress="${VIAAAS_BACKEND_ADDRESS}"
 
 # write to config file
