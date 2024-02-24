@@ -3,6 +3,7 @@ services:
   viaaas:
     image: roblkyogre/docker-viaaas:latest
     # build: .
+    container_name: viaaas
     env_file: ./docker.env
     ports:
       - 25543:25543 # Web UI port
