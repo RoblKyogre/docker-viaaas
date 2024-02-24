@@ -1,4 +1,4 @@
-#!/usr/bin/env ash
+#!/usr/bin/env sh
 
 CONFIG_DIR=/app/config/web/js
 CONFIG_FILE=${CONFIG_DIR}/config.js
@@ -22,7 +22,7 @@ IFS='
 parsedClientId="${WEB_AZURE_CLIENT_ID:-a370fff9-7648-4dbf-b96e-2b4f8d539ac2}"
 parsedOrigins="${WEB_WHITELISTED_ORIGINS:-https://via.re.yt.nom.br}"
 parsedProxy="${WEB_CORS_PROXY:-https://cors.re.yt.nom.br/}"
-[[ -z "${WEB_INSTANCE_SUFFIX}" ]] && parsedSuffix='null' || parsedSuffix="\"${WEB_INSTANCE_SUFFIX}\""
+[ -z "${WEB_INSTANCE_SUFFIX}" ] && parsedSuffix='null' || parsedSuffix="\"${WEB_INSTANCE_SUFFIX}\""
 
 # write to config file
 echo "const azureClientId = \"${parsedClientId}\";" >> ${CONFIG_FILE}

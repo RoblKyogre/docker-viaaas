@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=eclipse-temurin:21-jre
+ARG BASE_IMAGE=eclipse-temurin:21-jre-alpine
 ARG BUILD_IMAGE=eclipse-temurin:21-jdk
 
 FROM ${BUILD_IMAGE} as viaaas-build
