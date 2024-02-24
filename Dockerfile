@@ -1,5 +1,5 @@
-ARG BASE_IMAGE=eclipse-temurin:17-jre-focal
-ARG BUILD_IMAGE=eclipse-temurin:17-jdk-focal
+ARG BASE_IMAGE=eclipse-temurin:17-jre-alpine
+ARG BUILD_IMAGE=eclipse-temurin:17-jdk
 
 FROM ${BUILD_IMAGE} as build
 
