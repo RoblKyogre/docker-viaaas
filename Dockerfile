@@ -1,5 +1,5 @@
-ARG BASE_IMAGE=eclipse-temurin:17-jre-alpine
-ARG BUILD_IMAGE=eclipse-temurin:17-jdk-alpine
+ARG BASE_IMAGE=eclipse-temurin:21-jre-alpine
+ARG BUILD_IMAGE=eclipse-temurin:21-jdk-alpine
 
 FROM ${BUILD_IMAGE} as viaaas-build
 
