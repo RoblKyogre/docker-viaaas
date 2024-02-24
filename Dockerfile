@@ -10,7 +10,7 @@ ARG TARGETVARIANT
 WORKDIR /builder
 
 RUN apt-get update && apt-get install -y git
-RUN git clone -b main https://github.com/ViaVersion/VIAaaS.git VIAaaS
+RUN git clone -b master https://github.com/ViaVersion/VIAaaS.git VIAaaS
 
 WORKDIR /builder/VIAaaS
 RUN ./gradlew build --no-daemon
