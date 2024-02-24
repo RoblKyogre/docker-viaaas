@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=eclipse-temurin:21-jre-alpine
+ARG BASE_IMAGE=eclipse-temurin:21-jre
 ARG BUILD_IMAGE=eclipse-temurin:21-jdk
 
 FROM ${BUILD_IMAGE} as viaaas-build
@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y git
 RUN git clone -b dev https://github.com/ViaVersion/VIAaaS.git VIAaaS
 
 WORKDIR /builder/VIAaaS
-RUN ./gradlew build
+RUN ./gradlew build --no-daemon
 
 FROM ${BASE_IMAGE} as final
 
