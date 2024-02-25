@@ -25,7 +25,8 @@ COPY /root /
 
 WORKDIR /app
 #COPY --from=viaaas-build /builder/VIAaaS/build/libs/VIAaaS-*-all.jar /app/VIAaaS-all.jar
-RUN curl -Lf --output /app/VIAaaS-all.jar "https://jitpack.io/com/github/ViaVersion/VIAaaS/master-SNAPSHOT/VIAaaS-master-SNAPSHOT-all.jar"
+RUN --mount=type=secret,id=JITPACK_TOKEN \
+    curl -u$(cat /run/secrets/JITPACK_TOKEN) -Lf --output /app/VIAaaS-all.jar "https://jitpack.io/com/github/ViaVersion/VIAaaS/master-SNAPSHOT/VIAaaS-master-SNAPSHOT-all.jar"
 
 STOPSIGNAL SIGTERM
 
