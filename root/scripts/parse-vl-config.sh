@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-CONFIG_DIR=/app/config
+CONFIG_DIR=/app/config/viaversion
 CONFIG_FILE=${CONFIG_DIR}/vialegacy.yml
 
 {
