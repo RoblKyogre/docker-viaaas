@@ -61,7 +61,9 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          
+          secrets: |
+            "JITPACK_TOKEN=${{ secrets.JITPACK_TOKEN }}"
+
       - name: Update Docker Hub Description
         if: github.event_name != 'pull_request'
         uses: peter-evans/dockerhub-description@v4
