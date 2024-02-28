@@ -1,5 +1,3 @@
-# TESTING PR
-
 # docker-viaaas
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/RoblKyogre/docker-viaaas/docker-ci.yml)](https://github.com/RoblKyogre/docker-viaaas/actions/workflows/docker-ci.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/roblkyogre/docker-viaaas)](https://hub.docker.com/r/roblkyogre/docker-viaaas)
