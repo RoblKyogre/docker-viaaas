@@ -63,7 +63,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            CACHEBUST={{date 'YYYYMMDD-HHmmss' tz='UTC'}}
+            CACHEBUST=${{ steps.meta.outputs.tags }}
           secrets: |
             "JITPACK_TOKEN=${{ secrets.JITPACK_TOKEN }}"
 
