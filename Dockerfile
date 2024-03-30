@@ -25,7 +25,7 @@ COPY /root /
 
 WORKDIR /app
 #COPY --from=viaaas-build /builder/VIAaaS/build/libs/VIAaaS-*-all.jar /app/VIAaaS-all.jar
-RUN --mount=type=secret,id=JITPACK_TOKEN \
+RUN --no-cache --mount=type=secret,id=JITPACK_TOKEN \
     wget --user $(cat /run/secrets/JITPACK_TOKEN) -O /app/VIAaaS-all.jar "https://jitpack.io/com/github/ViaVersion/VIAaaS/master-SNAPSHOT/VIAaaS-master-SNAPSHOT-all.jar"
 
 STOPSIGNAL SIGTERM
