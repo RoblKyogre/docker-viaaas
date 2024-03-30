@@ -3,7 +3,7 @@ name: Docker CI
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 12 * * 0"
+    - cron: "0 12 * * 0,3"
   push:
     branches:
       - 'main'
