@@ -51,9 +51,6 @@ jobs:
           images: |
             ${{ secrets.DOCKERHUB_USERNAME }}/docker-viaaas
             ghcr.io/${{ github.repository }}
-            
-      - name: Set NOW to Work Around Docker L
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
         
       - name: Build and Push Image
         uses: docker/build-push-action@v5
@@ -65,10 +62,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          build-args: |
-            CACHEBUST=${{ env.NOW }}
-          secrets: |
-            "JITPACK_TOKEN=${{ secrets.JITPACK_TOKEN }}"
 
       - name: Update Docker Hub Description
         if: github.event_name != 'pull_request'
