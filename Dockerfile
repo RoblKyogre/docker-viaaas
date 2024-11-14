@@ -1,20 +1,4 @@
 ARG BASE_IMAGE=eclipse-temurin:21-jre-alpine
-#ARG BUILD_IMAGE=eclipse-temurin:17-jdk
-
-#FROM ${BUILD_IMAGE} as viaaas-build
-
-#ARG TARGETOS
-#ARG TARGETARCH
-#ARG TARGETVARIANT
-
-#WORKDIR /builder
-
-#RUN apt-get update && apt-get install -y git
-#RUN git clone -b dev https://github.com/ViaVersion/VIAaaS.git VIAaaS
-
-#WORKDIR /builder/VIAaaS
-#RUN ./gradlew build --no-daemon
-
 FROM ${BASE_IMAGE} as final
 
 ARG TARGETOS
@@ -24,11 +8,7 @@ ARG TARGETVARIANT
 COPY /root /
 
 WORKDIR /app
-#COPY --from=viaaas-build /builder/VIAaaS/build/libs/VIAaaS-*-all.jar /app/VIAaaS-all.jar
-ARG CACHEBUST
-RUN echo ${CACHEBUST}
-RUN --mount=type=secret,id=JITPACK_TOKEN \
-    wget --user $(cat /run/secrets/JITPACK_TOKEN) -O /app/VIAaaS-all.jar "https://jitpack.io/com/github/ViaVersion/VIAaaS/master-SNAPSHOT/VIAaaS-master-SNAPSHOT-all.jar"
+ADD "https://jitpack.io/com/github/ViaVersion/VIAaaS/master-SNAPSHOT/VIAaaS-master-SNAPSHOT-all.jar" /app/VIAaaS-all.jar
 
 STOPSIGNAL SIGTERM
 
