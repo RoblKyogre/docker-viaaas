@@ -7,8 +7,14 @@ ARG TARGETVARIANT
 
 COPY /root /
 
+RUN apk add unzip
+WORKDIR /build
+ADD "https://nightly.link/ViaVersion/VIAaaS/workflows/gradle/master/Artifacts.zip" /build/Artifacts.zip
+RUN unzip Artifacts.zip
+
 WORKDIR /app
-ADD "https://jitpack.io/com/github/ViaVersion/VIAaaS/master-SNAPSHOT/VIAaaS-master-SNAPSHOT-all.jar" /app/VIAaaS-all.jar
+RUN mv /build/VIAaaS-*-all.jar /app/VIAaaS-all.jar
+RUN rm -rf /build
 
 STOPSIGNAL SIGTERM
 
